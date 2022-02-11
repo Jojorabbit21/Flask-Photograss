@@ -1,13 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
   <head>
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    {% if title %}
+    <title>Photograss - {{ title }}</title>
+    {% else %}
+    <title>Photograss</title>
+    {% endif %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA=Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="{{ url_for('static', filename='css/index/style.css') }}" rel="stylesheet">
   </head>
 
   <body>
-    <h1>Achtung!</h1>
-    <h3>This Website is currently under construction<h3>  
+    <div class='video-box'>
+      <video autoplay muted loop >
+        <source src="{{ url_for('static', filename='video/index.mp4') }}" type='video/mp4'>
+        <p>Not Available Videos!</p>
+      </video>
+    </div>
+    <div class='title'>
+      <a href={{ url_for('main') }}>Photograss</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
   </body>
 
 </html>
