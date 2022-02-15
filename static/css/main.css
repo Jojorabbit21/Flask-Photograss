@@ -1,0 +1,95 @@
+@font-face {
+  font-family: "Adeston";
+  src: url("fonts/adeston-bw9b8.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  overflow-x: hidden;
+  height: auto;
+  width: auto;
+  margin: 0;
+  background-color:gray;
+  font-size: 14px;
+}
+
+.head {
+  top: 0;
+  left: 0;
+  position: sticky;
+}
+
+/* Header */
+.header {
+  z-index: 3;
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  background-color: rgba(0,0,0,0.1);
+}
+
+.menu {
+  width: 1.6rem;
+  height: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.hb {
+  width: 100%;
+  height: 2px;
+  background-color: black;
+}
+
+.title {
+  font-family: 'Adeston';
+  font-size: 2rem;
+}
+
+.contact {
+  width: 2rem;
+  height: 2rem;
+  background-color: black;
+}
+
+.body {
+  z-index: 1;
+}
+
+.menu-nav {
+  z-index: 2;
+  width: 25%;
+  height: auto;
+  background-color: white;
+  padding: 1rem 2rem 0 3rem;
+}
+
+.menu-nav[status='hidden'] {
+  display: none;
+}
+
+.menu-nav[status='show'] {
+  display: block;
+}
+
+.menu-logo {
+  text-align: right;
+  font-family: 'Adeston';
+  font-size: 1.6rem;
+  width: auto;
+  height: 1.6rem;
+  margin-bottom: 3rem;
+}
+
+.menu-row {
+  width: auto;
+  height: 2rem;
+  font-family: 'Adeston';
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+}

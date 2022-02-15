@@ -2,22 +2,41 @@
 <html lang="ko">
 
   <head>
+    {% if title %}
+    <title>Photograss - {{ title }}</title>
+    {% else %}
+    <title>Photograss</title>
+    {% endif %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA=Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="{{ url_for('static', filename='css/index/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
   </head>
 
   <body>
-    <div class='video-box'>
-      <video autoplay muted loop >
-        <source src="{{ url_for('static', filename='video/index.mp4') }}" type='video/mp4'>
-        <p>Not Available Videos!</p>
-      </video>
+    <div class='head'>
+      <div class='header'>
+        <div class='menu' onclick='slideMenu()' style='cursor:pointer;'>
+          <div class='hb'></div>
+          <div class='hb'></div>
+          <div class='hb'></div>
+        </div>
+        <div class='title'>
+          <!-- <span>Photograss</span> -->
+        </div>
+        <div class='contact'>
+        </div>
+      </div>
+
+      <div class='menu-nav' id='menu' status='hidden'>
+        <div class='menu-logo'>Photograss</div>
+        <div class='menu-row'>snap</div>
+        <div class='menu-row'>project</div>
+        <div class='menu-row'>commercial</div>
+        <div class='menu-row'>photobook</div>
+      </div>
     </div>
-    <div class='title'>
-      <a>Main Page</a>
-    </div>
+
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
   </body>
 
