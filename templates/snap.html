@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+  <head>
+    {% if title %}
+    <title>Photograss - {{ title }}</title>
+    {% else %}
+    <title>Photograss</title>
+    {% endif %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA=Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="{{ url_for('static', filename='css/snap.css') }}" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class='grid-box'>
+    {% for file in file_list %}
+        <img class='grid-img' src="{{ url_for('static', filename='image/snap/'+file) }}">
+    {% endfor %}
+    </div>
+
+
+
+    <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index/carousel.js') }}"></script>
+  </body>
+
+</html>

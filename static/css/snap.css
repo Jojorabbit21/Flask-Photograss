@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Adeston";
+  src: url("fonts/adeston-bw9b8.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  /* overflow-x: hidden; */
+  height: auto;
+  width: auto;
+  margin: 0;
+  background-color:gray;
+  font-size: 14px;
+}
+
+.grid-box {
+  display:table;
+  padding: 0 4px;
+}
+
+.grid-img {
+  width: 25%;
+  padding: 0 4px;
+}
+
+.grid-img img {
+  vertical-align: top;
+}

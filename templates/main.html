@@ -14,30 +14,43 @@
   </head>
 
   <body>
-    <div class='head'>
-      <div class='header'>
-        <div class='menu' onclick='slideMenu()' style='cursor:pointer;'>
-          <div class='hb'></div>
-          <div class='hb'></div>
-          <div class='hb'></div>
-        </div>
-        <div class='title'>
-          <!-- <span>Photograss</span> -->
-        </div>
-        <div class='contact'>
-        </div>
+    <div class='header'>
+      <div class='menu' onclick='slideMenu()' style='cursor:pointer;'>
+        <div class='hb'></div>
+        <div class='hb'></div>
+        <div class='hb'></div>
       </div>
-
-      <div class='menu-nav' id='menu' status='hidden'>
-        <div class='menu-logo'>Photograss</div>
-        <div class='menu-row'>snap</div>
-        <div class='menu-row'>project</div>
-        <div class='menu-row'>commercial</div>
-        <div class='menu-row'>photobook</div>
+      <div class='title'>
+        <span>Photograss</span>
+      </div>
+      <div class='contact'>
+      </div>
+    </div>
+    <!-- <div class='menu-nav' id='menu' status='hidden'>
+      <div class='menu-logo'>Photograss</div>
+      <div class='menu-row'>snap</div>
+      <div class='menu-row'>project</div>
+      <div class='menu-row'>commercial</div>
+      <div class='menu-row'>photobook</div>
+    </div> -->
+    <div class='slide-box'>
+      <div class='slide-list'>
+        {% for file in file_list %}
+          <div class='slide-item'>
+            <img class='slide-img' src="{{ url_for('static', filename='image/carousel/'+file) }}">
+          </div>
+        {% endfor %}
       </div>
     </div>
 
+    <div class='phrase-box'>
+      <p class='phrase'>How important is living a slow life. Let's walk slowly and get lost. Let's not just look forward but give warm eyes to every corner. Let's give love to everything in the world.</p>
+    </div>
+    <button type='button' class='btn-prev'>Prev</button>
+    <button type='button' class='btn-next'>Next</button>
+
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/index/carousel.js') }}"></script>
   </body>
 
 </html>

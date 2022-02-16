@@ -6,7 +6,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   height: auto;
   width: auto;
   margin: 0;
@@ -14,14 +14,12 @@ body {
   font-size: 14px;
 }
 
-.head {
-  top: 0;
-  left: 0;
-  position: sticky;
-}
 
 /* Header */
 .header {
+  top: 0;
+  left: 0;
+  position: fixed;
   z-index: 3;
   width: auto;
   height: auto;
@@ -29,7 +27,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem 1rem;
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,1);
 }
 
 .menu {
@@ -87,9 +85,55 @@ body {
 }
 
 .menu-row {
-  width: auto;
+  width: 100%;
   height: 2rem;
   font-family: 'Adeston';
   font-size: 1.5rem;
   margin-bottom: 3rem;
+  cursor: pointer;
+}
+
+/* Carousel */
+.slide-box {
+  width: 1920px;
+  height: 800px;
+  overflow: hidden;
+
+}
+
+.slide-item {
+  width: 1920px;
+  height: 800px;
+  float: left;
+}
+
+.slide-list {
+  display: table;
+  height: 800px;
+}
+
+.phrase-box {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none ;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.phrase {
+  font-family: 'Adeston';
+  font-size: 7rem;
+  color: darkred;
+  letter-spacing: -3px;
+  line-height: 130%;
+  text-align: center;
+  word-wrap: normal;
 }
