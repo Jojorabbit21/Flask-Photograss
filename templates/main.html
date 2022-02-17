@@ -24,6 +24,8 @@
         <span>Photograss</span>
       </div>
       <div class='contact'>
+        <!--<img class='contact-icon' src="{{ url_for('static', filename='image/header/contact.svg') }}"> -->
+        <a href="{{ url_for('contact') }}">Contact</a>
       </div>
     </div>
     <!-- <div class='menu-nav' id='menu' status='hidden'>
@@ -37,17 +39,18 @@
       <div class='slide-list'>
         {% for file in file_list %}
           <div class='slide-item'>
-            <img class='slide-img' src="{{ url_for('static', filename='image/carousel/'+file) }}">
+            <img class='slide-img' src="{{ url_for('static', filename='image/carousel/'+file) }}" draggable="false">
           </div>
         {% endfor %}
       </div>
     </div>
 
-    <div class='phrase-box'>
+    <!-- Pagination -->
+    <ul class='slide-pagination'></ul>
+
+    <!--<div class='phrase-box'>
       <p class='phrase'>How important is living a slow life. Let's walk slowly and get lost. Let's not just look forward but give warm eyes to every corner. Let's give love to everything in the world.</p>
-    </div>
-    <button type='button' class='btn-prev'>Prev</button>
-    <button type='button' class='btn-next'>Next</button>
+    </div>-->
 
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
     <script src="{{ url_for('static', filename='js/index/carousel.js') }}"></script>

@@ -10,20 +10,55 @@ body {
   height: auto;
   width: auto;
   margin: 0;
-  background-color:gray;
   font-size: 14px;
 }
 
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 .grid-box {
-  display:table;
-  padding: 0 4px;
+  width: 1400px;
+}
+
+.grid-contents {
+  cursor: pointer;
+}
+
+.grid-contents:hover {
+  opacity: 0.8;
+  transition: 0.1s ease-in-out all;
 }
 
 .grid-img {
-  width: 25%;
-  padding: 0 4px;
+  width: 100%;
 }
 
-.grid-img img {
-  vertical-align: top;
+
+.phrase-box {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none ;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 3;
+}
+
+.phrase {
+  font-family: 'Adeston';
+  font-size: 7rem;
+  color: orangered;
+  letter-spacing: -3px;
+  line-height: 130%;
+  text-align: center;
+  word-wrap: normal;
 }

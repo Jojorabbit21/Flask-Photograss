@@ -1,12 +1,15 @@
+console.log(window.innerWidth+"x"+window.innerHeight);
+
 const slideList = document.querySelector('.slide-list');
 const slideItems = document.querySelectorAll('.slide-item');
 const slideBtnNext = document.querySelector('.btn-next');
 const slideBtnPrev = document.querySelector('.btn-prev');
+const pagination = document.querySelector('.slide-pagination');
 
 const slideLen = slideItems.length;
 const slideStart = 0;
 
-const slideWidth = 1920; // Viewport width size (fullscreen)
+const slideWidth = window.innerWidth; // Viewport width size (fullscreen)
 const slideSpeed = 800; // Bigger = Slower
 
 var curIndex = 0;
@@ -29,8 +32,22 @@ slideList.insertBefore(clonedLast, slideList.firstElementChild);
 // Set Initial slide to first one
 slideList.style.transform = "translate3d(-" + (slideWidth*(slideStart+1)) + "px, 0px, 0px)";
 
+// Make Paginations
+let pageChild = '';
+for(var i=0; i<slideLen; i++) {
+  pageChild += '<li class="dot';
+  pageChild += (i === slideStart) ? ' dot_active' : '';
+  pageChild += '" data-index="' + i + '"><a href="#"></a></li>'
+}
+pagination.innerHTML = pageChild;
+const pageDots = document.querySelectorAll('.dot'); // each dot from pagination
+
+// Start Carousel Timer
+var timer = setInterval(toNext, 5000);
+
+
 // Transform pages
-slideBtnNext.addEventListener('click', function() {
+function toNext() {
   if(curIndex <= slideLen - 1) {
     slideList.style.transition = slideSpeed + 'ms';
     slideList.style.transform = "translate3d(-" + (slideWidth*(curIndex+2)) + "px, 0px, 0px)";
@@ -43,11 +60,13 @@ slideBtnNext.addEventListener('click', function() {
     curIndex = -1;
   }
   curSlide.classList.remove('slide-active');
+  pageDots[(curIndex === -1) ? slideLen -1 : curIndex].classList.remove('dot_active');
   curSlide = slideItems[++curIndex];
-  curSlide.classList.add('slide-active')
-});
+  curSlide.classList.add('slide-active');
+  pageDots[curIndex].classList.add('dot_active');
+}
 
-slideBtnPrev.addEventListener('click', function() {
+function toPrev() {
   if(curIndex >= 0) {
     slideList.style.transition = slideSpeed + 'ms';
     slideList.style.transform = "translate3d(-" + (slideWidth * curIndex) + "px, 0px, 0px)";
@@ -60,6 +79,9 @@ slideBtnPrev.addEventListener('click', function() {
     curIndex = slideLen;
   }
   curSlide.classList.remove('slide-active');
+  pageDots[(curIndex === slideLen) ? 0 : curIndex].classList.remove('dot_active');
   curSlide = slideItems[--curIndex];
-  curSlide.classList.add('slide-active')
-}); 
+  curSlide.classList.add('slide-active');
+  pageDots[curIndex].classList.add('dot_active');
+}
+

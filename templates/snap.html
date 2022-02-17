@@ -14,16 +14,28 @@
   </head>
 
   <body>
-    <div class='grid-box'>
-    {% for file in file_list %}
-        <img class='grid-img' src="{{ url_for('static', filename='image/snap/'+file) }}">
-    {% endfor %}
+    <div class='phrase-box'>
+      <p class='phrase'>How important is living a slow life. Let's walk slowly and get lost. Let's not just look forward but give warm eyes to every corner. Let's give love to everything in the world.</p>
     </div>
-
-
-
+    <div class='container'>
+      <div class='grid-box' id='grid-container'>
+      {% for file in file_list %}
+        <div class='grid-contents'>
+          <img class='grid-img' src="{{ url_for('static', filename='image/snap/'+file) }}">
+        </div>
+      {% endfor %}
+      </div>
+    </div>
+    
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/index/carousel.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
+    <script>
+      var masonry = Macy({
+        container: '#grid-container',
+        waitForImages: true,
+        margin: 24
+      });
+    </script>
   </body>
 
 </html>
