@@ -9,6 +9,21 @@ function slideMenu() {
   }
 }
 
+function zoomImage(element) {
+  var filename = element.getAttribute('imgsrc');
+  var modal = document.getElementsByClassName('modal')[0];
+  var modal_image = document.getElementsByClassName('modal-image')[0];
+  var status = modal.getAttribute('status');
+
+  if(status == "hidden") {
+    modal_image.setAttribute('src',"/static/image/snap/" + filename);
+    modal.setAttribute('status','visible');
+  }
+  else {
+    modal.setAttribute('status','hidden');
+  }
+}
+
 var pathname = window.location.pathname;
 window.onload = function() {
   var vw = window.innerWidth;

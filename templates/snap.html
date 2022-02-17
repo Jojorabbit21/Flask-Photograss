@@ -20,11 +20,15 @@
     <div class='container'>
       <div class='grid-box' id='grid-container'>
       {% for file in file_list %}
-        <div class='grid-contents'>
+        <div class='grid-contents' imgsrc="{{file}}" onclick='zoomImage(this);'>
           <img class='grid-img' src="{{ url_for('static', filename='image/snap/'+file) }}">
         </div>
       {% endfor %}
       </div>
+    </div>
+
+    <div class="modal" status="hidden">
+      <img class="modal-image">
     </div>
     
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
