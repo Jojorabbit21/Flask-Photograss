@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA=Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/project.css') }}" rel="stylesheet">
   </head>
 
   <body>
@@ -40,25 +40,23 @@
       <div class='menu-row'><a href="{{url_for('commercial')}}">commercial</a></div>
       <div class='menu-row'><a href="{{url_for('photobook')}}">photobook</a></div>
     </div>
-    <div class='slide-box'>
-      <div class='slide-list'>
+
+    <div class='project-title'>{{title}}</div>
+    <div class='project-img-container'>
+      <div class='project-img-container-inner'>
         {% for file in file_list %}
-          <div class='slide-item'>
-            <img class='slide-img' src="{{ url_for('static', filename='image/carousel/'+file) }}" draggable="false">
-          </div>
+        <div class='project-img-box' imgsrc="{{file}}">
+          <img class='project-img' draggable="false" src="{{ url_for('static', filename=folder +'/'+ file) }}">
+        </div>
         {% endfor %}
       </div>
     </div>
 
-    <!-- Pagination -->
-    <ul class='slide-pagination'></ul>
-
-    <!--<div class='phrase-box'>
-      <p class='phrase'>How important is living a slow life. Let's walk slowly and get lost. Let's not just look forward but give warm eyes to every corner. Let's give love to everything in the world.</p>
-    </div>-->
-
+    <div class="modal" status="hidden">
+      <img class="modal-image">
+    </div>
+    
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
-    <script src="{{ url_for('static', filename='js/index/carousel.js') }}"></script>
   </body>
 
 </html>

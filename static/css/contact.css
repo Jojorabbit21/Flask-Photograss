@@ -160,4 +160,8 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   /* font-family: 'Adeston'; */
   color: white;
+  display: flex;
+  justify-content: right;
+  box-sizing: border-box;
+  padding: 1.5%;
 }

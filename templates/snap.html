@@ -14,6 +14,32 @@
   </head>
 
   <body>
+    <div class='header'>
+      <div class='menu' onclick='slideMenu()' style='cursor:pointer;'>
+        <div class='hb'></div>
+        <div class='hb'></div>
+        <div class='hb'></div>
+      </div>
+      <div class='contact'>
+        <!--<img class='contact-icon' src="{{ url_for('static', filename='image/header/contact.svg') }}"> -->
+        <a href="{{ url_for('contact') }}">Contact</a>
+      </div>
+    </div>
+    <div class='menu-nav' id='menu' status='hidden'>
+      <div class='menu-nav-header'>
+        <div class='menu-close' onclick='slideMenu()' style='cursor:pointer;'>
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000">
+            <path d="M0 0h24v24H0V0z" fill="none"/>
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/>
+          </svg>
+        </div>
+        <div class='menu-logo'><a href="{{ url_for('main') }}">Photograss</a></div> 
+      </div>
+      <div class='menu-row'><a href="{{url_for('snap')}}">snap</a></div>
+      <div class='menu-row'><a href="{{url_for('project')}}">project</a></div>
+      <div class='menu-row'><a href="{{url_for('commercial')}}">commercial</a></div>
+      <div class='menu-row'><a href="{{url_for('photobook')}}">photobook</a></div>
+    </div>
     <div class='phrase-box'>
       <p class='phrase'>How important is living a slow life. Let's walk slowly and get lost. Let's not just look forward but give warm eyes to every corner. Let's give love to everything in the world.</p>
     </div>
@@ -31,6 +57,7 @@
       <img class="modal-image">
     </div>
     
+    <script src="{{ url_for('static', filename='js/image.js') }}"></script>
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
     <script>

@@ -6,21 +6,22 @@
 }
 
 :root {
-  overflow-x: hidden;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  font-size: 14px;
+  --web-height: 1080px;
+  --web-width: 1920px;
 }
+
 :root::-webkit-scrollbar {
   display: none;
 }
 
 body {
   /* overflow-x: hidden; */
-  height: auto;
-  width: auto;
   margin: 0;
+  background-color:white;
+  font-size: 14px;
+  overflow: hidden;
 }
+
 
 /* Header */
 .header {
@@ -38,7 +39,6 @@ body {
   align-items: center;
   padding: 15px 20px;
   color: black;
-  
 }
 
 .menu {
@@ -137,56 +137,60 @@ body {
   color: black;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  width: 100%;
+/* Body */
+.project-list-container {
+  width: 40%;
+  height: 100%;
+  float: left;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 5%;
+  border-right: 1px solid black;
 }
 
-.grid-box {
-  width: 1400px;
-  top: 80px;
+.project-row {
+  margin: 0 0 4% 0;
+  font-size: 36px;
 }
 
-.grid-contents {
+.project-name {
   cursor: pointer;
 }
 
-.grid-contents:hover {
-  opacity: 0.8;
-  transition: 0.1s ease-in-out all;
-}
-
-.grid-img {
-  width: 100%;
-}
-
-
-.phrase-box {
-  user-select: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none ;
-  pointer-events: none;
-  top: 0;
-  left: 0;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  z-index: 3;
-}
-
-.phrase {
-  font-family: 'Adeston';
-  font-size: 7rem;
-  color: orangered;
-  letter-spacing: -3px;
-  line-height: 130%;
+.project-title {
+  margin: 60px auto;
   text-align: center;
-  word-wrap: normal;
+  width: 100%;
+  font-size: 36px;
+  position: fixed;
+}
+
+.project-img-container {
+  position: absolute;
+  left: 5%;
+  top: 24%;
+  width: 80%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+.project-img-container-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 200%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 1%;
+  pointer-events: none;
+  transition: 0s ease-in;
+}
+
+.project-img {
+  float: left;
+  height: 70vh;
+  width: auto;
 }
 
 .modal[status="hidden"] {
