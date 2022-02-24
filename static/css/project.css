@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 @font-face {
   font-family: "Adeston";
   src: url("fonts/adeston-bw9b8.woff") format("woff");
@@ -20,6 +21,10 @@ body {
   background-color:white;
   font-size: 14px;
   overflow: hidden;
+}
+
+a {
+  text-decoration: none !important;
 }
 
 
@@ -139,7 +144,7 @@ body {
 
 /* Body */
 .project-list-container {
-  width: 40%;
+  width: 30%;
   height: 100%;
   float: left;
   background-color: white;
@@ -149,12 +154,21 @@ body {
 }
 
 .project-row {
-  margin: 0 0 4% 0;
-  font-size: 36px;
+  margin: 0 0 2vh 0;
 }
 
 .project-name {
   cursor: pointer;
+  font-size: 24px;
+  font-family: 'Manrope', sans-serif;
+}
+
+.project-row a:link, .project-row a:visited{
+  color: black;
+}
+
+.project-row a:hover {
+  color: crimson;
 }
 
 .project-title {
@@ -165,32 +179,14 @@ body {
   position: fixed;
 }
 
-.project-img-container {
-  position: absolute;
-  left: 5%;
-  top: 24%;
-  width: 80%;
-  height: 90vh;
-  overflow: hidden;
-}
-
-.project-img-container-inner {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 200%;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 1%;
-  pointer-events: none;
-  transition: 0s ease-in;
+.swiper {
+  height: 70%;
+  top: 20%;
+  left: 4%;
 }
 
 .project-img {
-  float: left;
-  height: 70vh;
-  width: auto;
+  height: 100%; 
 }
 
 .modal[status="hidden"] {

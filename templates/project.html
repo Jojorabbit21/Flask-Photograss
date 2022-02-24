@@ -10,7 +10,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA=Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="{{ url_for('static', filename='css/project.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/project.css') }}" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   </head>
 
   <body>
@@ -44,12 +45,20 @@
     <div class="project-list-container">
       {% for i in range(length) %}
         <div class="project-row">
-          <a class="project-name" href="{{"/project/"+endpoint[i]}}" source="{{folder[i]}}" onclick="loadProject(this);">{{name[i]}}</a>
+          <div class="project-name" href="{{"/project/"+endpoint[i]}}" source="{{folder[i]}}" onclick="loadProject(this);">{{name[i]}}</div>
         </div>
       {% endfor %}
     </div>
 
+    <div class="project-container">
+      <div class="project-title"></div>
+      <div class="project-desc"></div>
+      <div class="project-contents"></div>
+    </div>
+    
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/project.js') }}"></script>
   </body>
 
 </html>

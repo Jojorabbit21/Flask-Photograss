@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA=Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link href="{{ url_for('static', filename='css/project.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
   </head>
 
   <body>
@@ -42,10 +43,10 @@
     </div>
 
     <div class='project-title'>{{title}}</div>
-    <div class='project-img-container'>
-      <div class='project-img-container-inner'>
+    <div class='swiper mySwiper'>
+      <div class='swiper-wrapper'>
         {% for file in file_list %}
-        <div class='project-img-box' imgsrc="{{file}}">
+        <div class='swiper-slide' imgsrc="{{file}}" onclick='zoomImage(window.location.pathname, this);'>
           <img class='project-img' draggable="false" src="{{ url_for('static', filename=folder +'/'+ file) }}">
         </div>
         {% endfor %}
@@ -56,6 +57,16 @@
       <img class="modal-image">
     </div>
     
+    <script src="{{ url_for('static', filename='js/image.js') }}"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        grabCursor: true,
+        freeMode: true,
+        freeModeSticky: false,
+      });
+    </script>
     <script src="{{ url_for('static', filename='js/index/script.js') }}"></script>
   </body>
 

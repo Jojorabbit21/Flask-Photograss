@@ -46,7 +46,7 @@
     <div class='container'>
       <div class='grid-box' id='grid-container'>
       {% for file in file_list %}
-        <div class='grid-contents' imgsrc="{{file}}" onclick='zoomImage(this);'>
+        <div class='grid-contents' imgsrc="{{file}}" onclick='zoomImage(window.location.pathname, this);'>
           <img class='grid-img' src="{{ url_for('static', filename='image/snap/'+file) }}">
         </div>
       {% endfor %}
