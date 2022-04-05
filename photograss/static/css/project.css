@@ -146,11 +146,11 @@ a {
 .project-list-container {
   width: 30%;
   height: 100%;
-  float: left;
+  float: left;  
   background-color: white;
-  box-sizing: border-box;
   padding: 5%;
   border-right: 1px solid black;
+  box-sizing: border-box;
 }
 
 .project-row {
@@ -171,12 +171,19 @@ a {
   color: crimson;
 }
 
+.project-container {
+  width: 68%;
+  height: 100%;
+  padding: 1%;
+  float: right;
+  top: 0;
+}
+
 .project-title {
-  margin: 60px auto;
-  text-align: center;
+  text-align: left;
   width: 100%;
-  font-size: 36px;
-  position: fixed;
+  font-size: 24px;
+  font-family: 'Manrope';
 }
 
 .swiper {

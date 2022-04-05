@@ -80,21 +80,4 @@ window.onload = function() {
     header.style.height = "auto";
     menu.style.height = vh + "px";  
   }
-  else if(pathname.indexOf('/project/') > -1) {
-    var header = document.querySelector('.header');
-    var menu = document.querySelector('.menu-nav');
-
-    document.body.style.width = vw + "px";
-    document.body.style.height = vh + "px";
-    header.style.width = vw + "px";
-    header.style.height = "auto";
-    menu.style.height = vh + "px";
-    
-    // var project_contents = document.querySelectorAll('.swiper-slide');
-    // var project_img = document.querySelectorAll('.project-img');
-    // for(var i=0; i<project_contents.length; i++) {
-    //   project_contents[i].style.width = project_img[i].offsetWidth;
-    //   console.log(project_contents[i]);
-    // }
-  }
 }
