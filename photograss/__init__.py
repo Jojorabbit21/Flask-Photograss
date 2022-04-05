@@ -57,4 +57,4 @@ def photobook():
   return render_template('photobook.html', title='Photobooks')  
 
 if __name__ == "__main__":
-  app.run()
+  app.run(host='0.0.0.0')
